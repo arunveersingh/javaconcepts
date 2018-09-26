@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pointer4 {
+	
+	// Arrays are covariant and reified; generics are invariant and erased. 
 
 	public static void main(String[] args) {
 
