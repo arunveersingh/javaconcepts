@@ -22,9 +22,11 @@ public class Fleet {
 		
 		
 		// Not assignment compatible
-		// ls == lsc;
+		//ls == lsc;
 
 		// LISKOV SUBSTITUTION PRINCIPLE
+		/*Methods that use references to the base classes must be able to use the objects of the derived classes without knowing it*/
+		
 		
 		
 		
