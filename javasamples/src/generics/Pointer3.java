@@ -30,6 +30,11 @@ public class Pointer3 {
 		
 		// List<String>[] arrayOfListOfTypeStringX = new List<String>[] {new
 		// ArrayList<String>(), new ArrayList<Integer>()};
+		
+		
+		// :) :) Array of List of unbounded wildcard types is allowed.
+		List<?>[] arrayOfListOfTypeStringY = new List<?>[] {new
+				ArrayList<String>(), new ArrayList<Integer>()};
 
 		test(arrayOfListOfTypeString);
 
