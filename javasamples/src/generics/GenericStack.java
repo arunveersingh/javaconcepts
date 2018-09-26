@@ -14,7 +14,10 @@ import java.util.EmptyStackException;
  */
 public class GenericStack<E> {
 
-	private E[] elements;
+	//private E[] elements;
+	
+	// Way 2:
+	private Object[] elements;
 
 	private int size = 0;
 
@@ -27,9 +30,10 @@ public class GenericStack<E> {
 
 		// It will compile and it will work, but it gives a warning. Type safety:
 		// Unchecked cast from Object[] to E[]
-		elements = (E[]) new Object[DEFAULT_INITIAL_CAPACITY];
+		//elements = (E[]) new Object[DEFAULT_INITIAL_CAPACITY];
 
 		// Way 2:
+		elements = new Object[DEFAULT_INITIAL_CAPACITY];
 	}
 
 	public void push(E e) {
@@ -41,7 +45,7 @@ public class GenericStack<E> {
 		if (size == 0)
 			throw new EmptyStackException();
 
-		E result = elements[--size];
+		E result = (E) elements[--size];
 		elements[size] = null;
 		return result;
 	}
