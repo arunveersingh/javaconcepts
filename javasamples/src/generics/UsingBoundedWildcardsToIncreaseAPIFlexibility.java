@@ -1,6 +1,7 @@
 package generics;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * 
@@ -48,7 +49,12 @@ public class UsingBoundedWildcardsToIncreaseAPIFlexibility {
 		 * for the arguments (ArrayList<Integer>). It is because new
 		 * ArrayList<Integer>() cannot be casted to new ArrayList<Number>()
 		 */
-		//numbers.pushAll(new ArrayList<Integer>()); // Uncomment to verify the behavior
+		// numbers.pushAll(new ArrayList<Integer>()); // Uncomment to verify the
+		// behavior
+		
+		Collection<Object> objects = new ArrayList<>();
+		//numbers.popAll(objects);
+
 
 		StackWithBoundedWildcard<Number> numbersBounded = new UsingBoundedWildcardsToIncreaseAPIFlexibility().new StackWithBoundedWildcard<>();
 
@@ -66,6 +72,23 @@ public class UsingBoundedWildcardsToIncreaseAPIFlexibility {
 		void pushAll(Iterable<E> src) {
 			// do something
 		}
+
+		void popAll(Collection<E> dst	) {
+			while(isEmpty()) {
+				dst.add(pop());
+			}
+		}
+
+		private E pop() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		// Dummy DUMB method :)
+		private boolean isEmpty() {
+			return true;
+		}
+
 	}
 
 	class StackWithBoundedWildcard<E> {
@@ -75,6 +98,7 @@ public class UsingBoundedWildcardsToIncreaseAPIFlexibility {
 
 		/**
 		 * Usage of bounded wildcard.
+		 * 
 		 * @param src
 		 */
 		void pushAll(Iterable<? extends E> src) {
