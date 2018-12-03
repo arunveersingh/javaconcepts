@@ -61,6 +61,17 @@ public class UsingBoundedWildcardsToIncreaseAPIFlexibility {
 		numbersBounded.pushAll(new ArrayList<Number>());
 
 		numbersBounded.pushAll(new ArrayList<Integer>());
+		
+		
+		// This compiles successfully because this constructor accepts ? extends E; Integer extends Number.
+		new Chooser<Number>(new ArrayList<Integer>(), false);
+				
+		// This compiles successfully because this constructor accepts E. E is Number here.
+		new Chooser<Number>(new ArrayList<Number>());
+				
+		// This do not compiles successfully because this constructor accepts E. E is Number here. 
+		//ArrayList<Number> is not covariant to ArrayList<Integer>
+		//new Chooser<Number>(new ArrayList<Integer>());
 
 	}
 

@@ -33,6 +33,16 @@ public class Chooser<E> {
 	public Chooser(Collection<E> choices) {
 		choiceArray = new ArrayList<>(choices);
 	}
+	
+	/**
+	 * Introduced this constructor to explore PECS - producer extends consumer super. 
+	 * Here choices is a producer so used Collection<? extends E>
+	 * @param choices
+	 * @param dummy - introduced this just to have another constructor in this class.   
+	 */
+	public Chooser(Collection<? extends E> choices, boolean dummy) {
+		choiceArray = new ArrayList<>(choices);
+	}
 
 	public Object choose() {
 		Random rnd = ThreadLocalRandom.current();
