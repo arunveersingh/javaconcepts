@@ -18,6 +18,7 @@ public class ChildSerializedExtendsParentNonSerialized extends
     private String name;
 
     public ChildSerializedExtendsParentNonSerialized(String name) {
+	super("");
 	this.name = name;
     }
 

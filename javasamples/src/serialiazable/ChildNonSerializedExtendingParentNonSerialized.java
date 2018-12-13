@@ -14,6 +14,7 @@ public class ChildNonSerializedExtendingParentNonSerialized
     private String name;
 
     public ChildNonSerializedExtendingParentNonSerialized(String name) {
+	super("");
 	this.name = name;
     }
 
