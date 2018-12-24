@@ -13,6 +13,10 @@ public class Child extends Parent {
     
     }*/
     
+/* public final void methodFinal() {
+	
+    }*/
+    
     public static void main(String[] args) {
 	
 	System.out.println("Hello Child");

@@ -14,31 +14,32 @@ import java.util.List;
  */
 public class Pointer1 {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		List<Object> objList = new ArrayList<>();
-		objList.add(new String());
-		objList.add(new ArrayList<Object>());
-		test(objList);
-		
-		
-		//List<String> objList2 = new ArrayList();
-		test(objList);
-		test(new ArrayList<String>());
-		
+	List<Object> objList = new ArrayList<>();
+	objList.add(new String());
+	objList.add(new ArrayList<Object>());
+	test(objList);
 
-	}
+	// List<String> objList2 = new ArrayList();
+	test(objList);
+	test(new ArrayList<String>());
 
-	static void test(List<Object> arrayList) {
+    }
 
-	}
+    static void test(List<Object> arrayList) {
+	System.out.println("List<Object> arrayList");
+    }
 
-	/*static void test(ArrayList<String> arrayList) {
+    /*
+     * static void test(ArrayList<String> arrayList) {
+     * 
+     * }
+     */
 
-	}*/
-	
-	static void test(Object object) {
-		
-	}
+    static void test(Object object) {
+	System.out.println("Object");
+
+    }
 
 }
